@@ -120,6 +120,25 @@ Criando e manipulando Animais:
 
 Dica: Utilize `console.log()` para exibir as informações!
 
+## Resposta:
+```js
+class Animal {
+    constructor(name,idade){
+        this.name = name
+        this.idade = idade
+    }
+
+    descrever() {
+        console.log(`Esse é o ${this.name} e ele tem ${this.idade} anos.`)
+    }
+}
+
+let cachorro = new Animal('Spike',5)
+let gato = new Animal('Tom',3)
+
+cachorro.descrever()
+gato.descrever()
+```
 ______
 
 **8)** Nos últimos dias tivemos a oportunidade de ter contato com Programação Orientada a Objetos, e tivemos contato com o tema "herança". Herança é um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos. Ela é usada na intenção de reaproveitar código ou comportamento generalizado ou especializar operações ou atributos. Então vamos praticar esse conteúdo nessa questão.
@@ -145,7 +164,38 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+## Resposta:
+```js
+class Animal {
+    constructor(name,idade){
+        this.name = name
+        this.idade = idade
+    }
 
+    descrever() {
+        console.log(`Esse é o ${this.name} e ele tem ${this.idade} anos.`)
+    }
+}
+
+class Gato extends Animal {
+    constructor(nome, idade, cor) {
+        super(nome,idade)
+        this.cor = cor
+    }
+
+    miar() {
+        console.log('Miaaaauuuuuu!')
+    }
+
+}
+
+let cachorro = new Animal('Spike',5)
+let gato = new Gato('Tom',3)
+
+cachorro.descrever()
+gato.descrever()
+gato.miar()
+```
 ______
 
 **9)** Vamos criar um programa em JavaScript para somar notas!
@@ -167,7 +217,29 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
+## Resposta:
+```js
+class SomadorDeNotas{
+    constructor(total){
+        this.total = 0
+    }
 
+    adicionarNota(nota){
+        this.total += nota
+    }
+
+    verTotal(){
+        console.log(`A soma de notas é ${this.total}`)
+    }
+}
+
+let somador = new SomadorDeNotas()
+
+somador.adicionarNota(5)
+somador.adicionarNota(8)
+
+somador.verTotal()
+```
 ______
 
 **10)** Imagine que você está criando um programa em JavaScript para uma escola. Neste programa, existem diferentes tipos de funcionários, cada um com suas próprias características. Considere as seguintes classes:
@@ -188,3 +260,74 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 - Para cada objeto, chame o método calcularSalario() e mostre o salário calculado no console.
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
+
+## Resposta:
+```js
+class Professor extends Funcionario{
+    // Cria os atributos da classe Professor, incorporando os da classe Funcionário
+    constructor(nome,idade,salarioBase,disciplina,horaSemana,salarioTotal){
+        // Chama o construtor da classe pai (Funcionario) com super()
+        super(nome,idade,salarioBase)
+        // Inicializa os atributos específicos de Professor
+        this.disciplina = disciplina
+        this.horaSemana = horaSemana
+        this.salarioTotal = salarioTotal
+    }
+
+    // Método para calcular o salário de um Professor
+    calcularSalario(){
+        // Cálculo do salário total baseado no número de horas semanais (input)
+        // multiplicado por 4 semanas e por R$50, o valor da hora/aula
+        this.salarioTotal = this.horaSemana * 4 * 50
+        // Exibição do salário formatado com duas casas decimais
+        console.log(`O salário de ${this.nome} é R$${this.salarioTotal.toFixed(2)}`)
+    }
+}
+
+// Cria instâncias de professores
+let professor01 = new Professor('Cláudio',14,0,'Orientação',40,null)
+let professor02 = new Professor('Cris',16,0,'Codar',50,null) // Posso chamar um null?
+
+// Calcula o salário dos professores
+professor01.calcularSalario()
+professor02.calcularSalario()
+```
+
+_____
+
+```js
+// PS: Funny ChatGPT Comments
+
+// Bem-vindo ao mundo dos cálculos de salário!
+class Funcionario{
+    constructor(nome,idade,salarioBase){
+        this.nome = nome; // Aqui armazenamos o nome do funcionário
+        this.idade = idade; // Idade, porque até robôs precisam envelhecer
+        this.salarioBase = salarioBase; // O salário inicial do funcionário
+    }
+
+    calcularSalario(){ // Aqui será calculado o salário, mas como? Vamos descobrir!
+        // Hmm... nada aqui ainda, vamos deixar isso para os professores
+    }
+}
+
+class Professor extends Funcionario{
+    constructor(nome,idade,salarioBase,disciplina,horaSemana,salarioTotal){
+        super(nome,idade,salarioBase);
+        this.disciplina = disciplina; // A disciplina que o professor leciona
+        this.horaSemana = horaSemana; // Horas por semana, como ele adora ensinar!
+        this.salarioTotal = salarioTotal; // Salário total, importante calcular!
+    }
+
+    calcularSalario(){ // Hora da ação! Vamos calcular o salário total!
+        this.salarioTotal = this.horaSemana * 4 * 50; // Quanto vale todo esse conhecimento?
+        console.log(`O salário de ${this.nome} é R$${this.salarioTotal.toFixed(2)}`); // Mostrando o resultado brilhante!
+    }
+}
+
+let professor01 = new Professor('Cláudio',14,0,'Orientação',20); // Nosso herói Cláudio, sempre orientando
+let professor02 = new Professor('Cris',16,0,'Codar',40); // Cris, a mestra do código!
+
+professor01.calcularSalario(); // Cláudio, mostre-nos o seu valor!
+professor02.calcularSalario(); // Cris, mostre ao mundo o poder do seu código!
+```
