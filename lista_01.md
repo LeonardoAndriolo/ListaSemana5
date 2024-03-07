@@ -120,7 +120,7 @@ Criando e manipulando Animais:
 
 Dica: Utilize `console.log()` para exibir as informações!
 
-## Resposta:
+### Resposta:
 ```js
 class Animal {
     constructor(name,idade){
@@ -164,7 +164,7 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
-## Resposta:
+### Resposta:
 ```js
 class Animal {
     constructor(name,idade){
@@ -217,7 +217,7 @@ Chamando o Método para Ver o Total:
 
 Dica: Utilize console.log() para exibir as informações!
 
-## Resposta:
+### Resposta:
 ```js
 class SomadorDeNotas{
     constructor(total){
@@ -261,7 +261,7 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
 
-## Resposta:
+### Resposta:
 ```js
 class Professor extends Funcionario{
     // Cria os atributos da classe Professor, incorporando os da classe Funcionário
