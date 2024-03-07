@@ -263,6 +263,22 @@ Certifique-se de explicar cada parte do código utilizando comentários, explica
 
 ### Resposta:
 ```js
+class Funcionario{
+    // Cria os atributos da classe Funcionario
+    constructor(nome,idade,salarioBase){
+        // Inicializa os atributos
+        this.nome = nome
+        this.idade = idade
+        this.salarioBase = salarioBase
+    }
+
+    // Método para calcular o salário de qualquer funcionário
+    calcularSalario(){
+        // Não utilizado de momento (scrach head)
+        return this.salarioBase
+    }
+}
+
 class Professor extends Funcionario{
     // Cria os atributos da classe Professor, incorporando os da classe Funcionário
     constructor(nome,idade,salarioBase,disciplina,horaSemana,salarioTotal){
