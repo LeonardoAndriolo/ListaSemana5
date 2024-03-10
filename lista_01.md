@@ -27,7 +27,7 @@ a) Imprime os números pares de 1 a 10.
 
 b) Imprime os números ímpares de 1 a 10.
 
-c) Imprime os números pares de 2 a 10.      <====x
+x====>>> c) Imprime os números pares de 2 a 10.      
 
 d) Imprime os números ímpares de 2 a 10.
 
@@ -39,7 +39,7 @@ ______
 
 No lugar onde está escrito “// linha” qual das opções abaixo deve estar para funcionar corretamente o código?
 
-A) let carro = new Carro("Toyota");      <====x
+x====>>> A) let carro = new Carro("Toyota");    
 
 B) let ligar = new ligar("Toyota");
 
@@ -55,7 +55,7 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) 18       <====x
+x====>>> A) 18    
 
 B) 16
 
@@ -67,7 +67,7 @@ ______
 
 **4)** Como você criaria um método `acelerar()` em uma classe `Carro`, que recebe um parâmetro `velocidade` e o adiciona a um atributo `velocidadeAtual`?
 
-A) ![Uma imagem](assets/ex04_1.PNG)       <====x
+x====>>> A) ![Uma imagem](assets/ex04_1.PNG)   
 
 B) ![Uma imagem](assets/ex04_2.PNG)
 
@@ -79,7 +79,7 @@ ______
 
 **5)** Qual a forma correta de definir uma classe Carro em JavaScript, com um método ligar() e um atributo marca?
 
-A) ![Uma imagem](assets/ex05_1.PNG)       <====x
+x====>>> A) ![Uma imagem](assets/ex05_1.PNG)   
 
 B) ![Uma imagem](assets/ex05_2.PNG)
 
@@ -95,7 +95,7 @@ ______
 
 Qual será a saída do código acima?
 
-A) "Olá, meu nome é João. Olá, meu nome é Maria."       <====x
+x====>>> A) "Olá, meu nome é João. Olá, meu nome é Maria."    
 
 B) "Olá, meu nome é ."
 
@@ -123,13 +123,13 @@ Dica: Utilize `console.log()` para exibir as informações!
 ### Resposta:
 ```js
 class Animal {
-    constructor(name,idade){
-        this.name = name
+    constructor(nome,idade){
+        this.nome = nome
         this.idade = idade
     }
 
     descrever() {
-        console.log(`Esse é o ${this.name} e ele tem ${this.idade} anos.`)
+        console.log(`Esse é o ${this.nome} e ele tem ${this.idade} anos.`)
     }
 }
 
@@ -167,13 +167,13 @@ Dica: Utilize console.log() para exibir as informações!
 ### Resposta:
 ```js
 class Animal {
-    constructor(name,idade){
-        this.name = name
+    constructor(nome,idade){
+        this.nome = nome
         this.idade = idade
     }
 
     descrever() {
-        console.log(`Esse é o ${this.name} e ele tem ${this.idade} anos.`)
+        console.log(`Esse é o ${this.nome} e ele tem ${this.idade} anos.`)
     }
 }
 
@@ -263,6 +263,7 @@ Certifique-se de explicar cada parte do código utilizando comentários, explica
 
 ### Resposta:
 ```js
+// Cria a classe Funcionário
 class Funcionario{
     // Cria os atributos da classe Funcionario
     constructor(nome,idade,salarioBase){
@@ -275,10 +276,13 @@ class Funcionario{
     // Método para calcular o salário de qualquer funcionário
     calcularSalario(){
         // Não utilizado de momento (scrach head)
+        // O salário base é o salário total de um funcionário?
+        // Retorno ele por via das dúvidas
         return this.salarioBase
     }
 }
 
+// Cria a classe Professors, herdada de Funcionário
 class Professor extends Funcionario{
     // Cria os atributos da classe Professor, incorporando os da classe Funcionário
     constructor(nome,idade,salarioBase,disciplina,horaSemana,salarioTotal){
@@ -294,6 +298,7 @@ class Professor extends Funcionario{
     calcularSalario(){
         // Cálculo do salário total baseado no número de horas semanais (input)
         // multiplicado por 4 semanas e por R$50, o valor da hora/aula
+        // Se salárioBase for o valor de hora/aula, basta substituir o 50 por this.salarioBase
         this.salarioTotal = this.horaSemana * 4 * 50
         // Exibição do salário formatado com duas casas decimais
         console.log(`O salário de ${this.nome} é R$${this.salarioTotal.toFixed(2)}`)
